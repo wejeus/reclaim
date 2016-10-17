@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility = rootProject.ext.sourceCompatibilityVersion
+        targetCompatibility = rootProject.ext.targetCompatibilityVersion
+    }
+
+    defaultConfig {
+        applicationId "com.example.reclaim"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        jackOptions {
+//            enabled true
+//        }
+    }
+
+    lintOptions {
+        textReport true
+        textOutput "stdout"
+        checkAllWarnings true
+        warningsAsErrors true
+        showAll true
+        explainIssues true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:24.2.1'
+
+    compile project(':reclaim-android')
+    annotationProcessor project(':reclaim-compiler')
+
+    testCompile deps.junit
+}
