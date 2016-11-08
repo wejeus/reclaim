@@ -3,11 +3,15 @@ apply plugin: 'java'
 sourceCompatibility = rootProject.ext.sourceCompatibilityVersion
 targetCompatibility = rootProject.ext.targetCompatibilityVersion
 
+task assembleCompilerJarWithDependencies(type: Jar) {
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 dependencies {
     compile project(':reclaim-annotations')
     compile deps.autoservice
     compile deps.autocommon
     compile deps.javapoet
-
-//    testCompile deps.junit
 }
