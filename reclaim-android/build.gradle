@@ -12,6 +12,9 @@ android {
 
 dependencies {
     compile project(':reclaim-annotations')
-    compile 'com.android.support:recyclerview-v7:24.2.0'
+    compile deps.recyclerView
+    compile deps.supportAnnotations
     testCompile 'junit:junit:4.12'
 }
+
+apply from: rootProject.file('gradle-mvn-push.gradle')

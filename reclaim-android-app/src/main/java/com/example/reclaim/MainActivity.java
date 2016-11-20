@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reclaim.delegates.ButtonWithIconAndTextDelegate;
+import com.example.reclaim.delegates.ImageDelegate;
 import com.example.reclaim.delegates.KeyValueAdapterDelegate;
 import com.isalldigital.reclaim.RecyclerAdapter;
 
@@ -32,21 +33,21 @@ public class MainActivity extends AppCompatActivity {
 
         text = (TextView) findViewById(R.id.text);
 
-        adapter.add(new KeyValueAdapterDelegate.KeyValueCell2("Key0", "Value0"));
-        adapter.add(new ButtonWithIconAndTextDelegate.ButtonCell("Key1", null));
-        adapter.add(new KeyValueAdapterDelegate.KeyValueCell2("Key1", "Value1"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
 
-        adapter.add(new ButtonWithIconAndTextDelegate.ButtonCell("Key1", new View.OnClickListener() {
+        adapter.add(new ButtonWithIconAndTextDelegate.ButtonCell("Button 1", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "asdfasdf", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Click Button 1", Toast.LENGTH_LONG).show();
             }
         }));
 
-        adapter.add(new ButtonWithIconAndTextDelegate.ButtonCell("Keadsfy1", new View.OnClickListener() {
+        adapter.add(new ImageDelegate.ImageCell(R.drawable.droid));
+
+        adapter.add(new ButtonWithIconAndTextDelegate.ButtonCell("Button 2", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "asdfasdf", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Click Button 2", Toast.LENGTH_LONG).show();
             }
         }));
 

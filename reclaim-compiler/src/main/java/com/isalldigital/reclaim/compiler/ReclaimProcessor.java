@@ -43,6 +43,8 @@ import javax.tools.Diagnostic;
 /**
  * Since Java 7 we can use: @SupportedAnnotationTypes and @SupportedSourceVersion instead of overriding
  * corresponding methods in AbstractProcessor.
+ *
+ * The last round contains no input, and is thus a good opportunity to release any resources the processor may have acquired.
  */
 @AutoService(Processor.class)
 @SupportedAnnotationTypes("com.isalldigital.reclaim.annotations.ReclaimAdapterDelegate")
@@ -89,6 +91,8 @@ public class ReclaimProcessor extends AbstractProcessor {
 
         List<TypeElement> cells = new LinkedList<>();
         List<TypeElement> delegates = new LinkedList<>();
+
+//        from the round environment we can get the class being compiled as rootElement: roundEnv.getRootElements()
 
         for (Element annotatedElem : roundEnv.getElementsAnnotatedWith(ReclaimAdapterDelegate.class)) {
 

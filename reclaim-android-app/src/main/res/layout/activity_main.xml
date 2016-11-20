@@ -4,15 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/activity_vertical_margin"
-    android:background="#00ff00">
+    android:padding="8dp">
 
     <TextView
         android:id="@+id/text"
         android:textIsSelectable="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test"/>
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="List created with adapter delegates. These are items added as DTO only. View rendering is handled implicitly by connected view holder delegate."/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/adapter"

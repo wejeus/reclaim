@@ -14,13 +14,9 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName VERSION_NAME
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-//        jackOptions {
-//            enabled true
-//        }
     }
 
     lintOptions {
@@ -30,6 +26,7 @@ android {
         warningsAsErrors true
         showAll true
         explainIssues true
+        abortOnError false
     }
 
     buildTypes {

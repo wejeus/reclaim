@@ -13,16 +13,16 @@ import com.isalldigital.reclaim.DisplayableCell;
 import com.isalldigital.reclaim.annotations.ReclaimAdapterDelegate;
 
 
-@ReclaimAdapterDelegate(KeyValueAdapterDelegate.KeyValueCell2.class)
+@ReclaimAdapterDelegate(KeyValueAdapterDelegate.KeyValueCell.class)
 public class KeyValueAdapterDelegate extends AdapterDelegate {
 
     public KeyValueAdapterDelegate() {}
 
-    public static class KeyValueCell2 implements DisplayableCell {
+    public static class KeyValueCell implements DisplayableCell {
         public String key;
         public String value;
 
-        public KeyValueCell2(String key, String value) {
+        public KeyValueCell(String key, String value) {
             this.key = key;
             this.value = value;
         }
@@ -53,7 +53,7 @@ public class KeyValueAdapterDelegate extends AdapterDelegate {
     @Override
     public void onBindViewHolder(@NonNull DisplayableCell item, @NonNull RecyclerView.ViewHolder holder, int position) {
         ViewHolder vh = (ViewHolder) holder;
-        KeyValueCell2 cell = (KeyValueCell2) item;
+        KeyValueCell cell = (KeyValueCell) item;
 
         vh.key.setText(cell.key);
         vh.value.setText(cell.value);

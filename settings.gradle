@@ -1,15 +1,6 @@
-include ':reclaim-android', ':reclaim-android-app'
+include ':reclaim-android'
 include ':reclaim-compiler'
 include ':reclaim-annotations'
+include ':reclaim-android-app'
 
-//include ':butterknife'
-//include ':butterknife-annotations'
-//include ':butterknife-compiler'
-//include ':butterknife-gradle-plugin'
-//include ':butterknife-lint'
-//include ':butterknife-integration-test'
-//
-//include ':sample:app'
-//include ':sample:library'
-//
-//rootProject.name = 'butterknife-parent'
+rootProject.name = 'reclaim-parent'
