@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class RecyclerAdapter extends RecyclerView.Adapter {
+public class ReclaimAdapter extends RecyclerView.Adapter {
     private AdapterDelegatesManager delegatesManager;
 
     private List<DisplayableCell> renderedDataset;
@@ -21,7 +21,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
     private List<DisplayableCell> headerElements;
 
 
-    public RecyclerAdapter(Context context) {
+    public ReclaimAdapter(Context context) {
         Context appContext = context.getApplicationContext();
 
         delegatesManager = new AdapterDelegatesManager(appContext);

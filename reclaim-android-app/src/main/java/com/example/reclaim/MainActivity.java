@@ -11,14 +11,14 @@ import android.widget.Toast;
 import com.example.reclaim.delegates.ButtonWithIconAndTextDelegate;
 import com.example.reclaim.delegates.ImageDelegate;
 import com.example.reclaim.delegates.KeyValueAdapterDelegate;
-import com.isalldigital.reclaim.RecyclerAdapter;
+import com.isalldigital.reclaim.ReclaimAdapter;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView text;
     private RecyclerView adapterView;
-    private RecyclerAdapter adapter;
+    private ReclaimAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         adapterView = (RecyclerView) findViewById(R.id.adapter);
         adapterView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new RecyclerAdapter(this);
+        adapter = new ReclaimAdapter(this);
         adapterView.setAdapter(adapter);
 
         text = (TextView) findViewById(R.id.text);

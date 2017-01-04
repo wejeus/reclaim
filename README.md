@@ -100,7 +100,7 @@ public class MainActivity extends Activity {
         ...
         RecyclerView adapterView = (RecyclerView) rootView.findViewById(R.id.adapter);
         adapterView.setLayoutManager(new LinearLayoutManager(this));
-        RecyclerAdapter adapter = new RecyclerAdapter(this);
+        ReclaimAdapter adapter = new ReclaimAdapter(this);
         adapterView.setAdapter(adapter);
 
         adapter.add(new ButtonCell("Button One", new View.OnClickListener() {

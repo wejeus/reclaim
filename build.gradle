@@ -13,6 +13,10 @@ allprojects {
     }
 }
 
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
 def supportLibraryVersion = '24.2.1'
 
 ext {
@@ -25,11 +29,11 @@ ext {
 }
 
 ext.deps = [
-        supportAnnotations: "com.android.support:support-annotations:$supportLibraryVersion",
-        recyclerView: "com.android.support:recyclerview-v7:$supportLibraryVersion",
-        javapoet: 'com.squareup:javapoet:1.7.0',
-        junit: 'junit:junit:4.12',
-        autoservice: 'com.google.auto.service:auto-service:1.0-rc2',
-        autocommon: 'com.google.auto:auto-common:0.6',
+    supportAnnotations: "com.android.support:support-annotations:$supportLibraryVersion",
+    recyclerView: "com.android.support:recyclerview-v7:$supportLibraryVersion",
+    javapoet: 'com.squareup:javapoet:1.7.0',
+    junit: 'junit:junit:4.12',
+    autoservice: 'com.google.auto.service:auto-service:1.0-rc2',
+    autocommon: 'com.google.auto:auto-common:0.6',
 ]
 
