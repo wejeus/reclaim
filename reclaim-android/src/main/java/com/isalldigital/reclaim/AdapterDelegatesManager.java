@@ -18,7 +18,7 @@ public class AdapterDelegatesManager {
     private static Map<String, Integer> cellsMap = null;
     private static Map<Integer, String> delegatesMap = null;
     private static boolean initiallized = false;
-    private Map<Integer, AdapterDelegate> inflatedDelegates; // TODO: Maybe refactor to FIFO cache based
+    private Map<Integer, AdapterDelegate> inflatedDelegates; // TODO: Maybe refactor to FIFO cache based and add automatic pruning
 
     private Context context; // must be AppContext to avoid leaks
 
@@ -56,7 +56,6 @@ public class AdapterDelegatesManager {
         AdapterDelegate delegate = null;
         try {
             delegate = (AdapterDelegate) Class.forName(delegateClass).newInstance();
-
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -90,6 +89,7 @@ public class AdapterDelegatesManager {
         }
 
         AdapterDelegate delegate = inflatedDelegates.get(viewType);
+        delegate.context = context;
 
         if (delegate == null) {
             throw new NullPointerException("No AdapterDelegate added for ViewType " + viewType);

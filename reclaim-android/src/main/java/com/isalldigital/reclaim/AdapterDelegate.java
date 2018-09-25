@@ -1,5 +1,6 @@
 package com.isalldigital.reclaim;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,12 @@ import android.view.ViewGroup;
  * component you have to use.
  */
 public abstract class AdapterDelegate {
+
+    protected Context context;
+
+    public final Context getApplicationContext() {
+        return context.getApplicationContext();
+    }
 
     /**
      *
