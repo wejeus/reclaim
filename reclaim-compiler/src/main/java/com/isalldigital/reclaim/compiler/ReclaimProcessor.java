@@ -48,7 +48,8 @@ import javax.tools.Diagnostic;
  */
 @AutoService(Processor.class)
 @SupportedAnnotationTypes("com.isalldigital.reclaim.annotations.ReclaimAdapterDelegate")
-@SupportedSourceVersion(SourceVersion.RELEASE_7)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
+@SuppressWarnings("NullAway")
 public class ReclaimProcessor extends AbstractProcessor {
 
     private Types typeUtils;

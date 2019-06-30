@@ -1,10 +1,11 @@
 package com.isalldigital.reclaim;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * This delegate provide method to hook in this delegate to {@link RecyclerView.Adapter} lifecycle.

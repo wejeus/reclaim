@@ -1,15 +1,13 @@
 package com.isalldigital.reclaim;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 
@@ -18,7 +16,7 @@ public class AdapterDelegatesManager {
     private static Map<String, Integer> cellsMap = null;
     private static Map<Integer, String> delegatesMap = null;
     private static boolean initiallized = false;
-    private Map<Integer, AdapterDelegate> inflatedDelegates; // TODO: Maybe refactor to FIFO cache based
+    private Map<Integer, AdapterDelegate> inflatedDelegates; // TODO: Maybe refactor to FIFO cache based and add automatic pruning
 
     private Context context; // must be AppContext to avoid leaks
 

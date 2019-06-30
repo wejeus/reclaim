@@ -1,15 +1,24 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:3.4.1'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
@@ -17,23 +26,24 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-def supportLibraryVersion = '24.2.1'
-
 ext {
-    minSdkVersion = 9
-    targetSdkVersion = 24
-    compileSdkVersion = 24
+    minSdkVersion = 14
+    targetSdkVersion = 28
+    compileSdkVersion = 28
     buildToolsVersion = '24.0.2'
-    sourceCompatibilityVersion = JavaVersion.VERSION_1_7
-    targetCompatibilityVersion = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 ext.deps = [
-    supportAnnotations: "com.android.support:support-annotations:$supportLibraryVersion",
-    recyclerView: "com.android.support:recyclerview-v7:$supportLibraryVersion",
+    supportannotations: "androidx.annotation:annotation:1.0.0",
+    recyclerview: "androidx.recyclerview:recyclerview:1.0.0",
+    design: "com.google.android.material:material:1.0.0-rc01",
+    appcompat: "androidx.appcompat:appcompat:1.0.0",
+    coordinatorlayout: "androidx.coordinatorlayout:coordinatorlayout:1.0.0",
     javapoet: 'com.squareup:javapoet:1.7.0',
     junit: 'junit:junit:4.12',
-    autoservice: 'com.google.auto.service:auto-service:1.0-rc2',
-    autocommon: 'com.google.auto:auto-common:0.6',
+    autoservice: 'com.google.auto.service:auto-service:1.0-rc4',
+    autocommon: 'com.google.auto:auto-common:0.10',
 ]
 

@@ -40,6 +40,36 @@ public class ApplicationDelegate extends Application {
 }
 ```
 
+Set up a RecyclerView as you usually do in your views by just adding it in XML:
+```
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/list_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</android.support.v7.widget.RecyclerView>
+```
+
+Define view for cell
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/left"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textIsSelectable="false"
+        tools:text="left" />
+
+</LinearLayout>
+```
+
 Create the data object you want, here we want a row in our list to just hold a simple button. This should only contain the *functionality* (behaviour) of that row. This data object *MUST* implement the `DisplayableCell` interface.
 
 ```java

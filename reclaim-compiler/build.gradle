@@ -1,10 +1,15 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
-    compile project(':reclaim-annotations')
-    compile deps.autoservice
-    compile deps.autocommon
-    compile deps.javapoet
+    implementation project(':reclaim-annotations')
+    implementation deps.autocommon
+    api deps.javapoet
+    annotationProcessor deps.autoservice
+    compileOnly deps.autoservice
+    compileOnly files(org.gradle.internal.jvm.Jvm.current().getToolsJar())
 }
 
 apply from: rootProject.file('gradle-mvn-push.gradle')

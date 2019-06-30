@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -11,10 +10,13 @@ android {
 }
 
 dependencies {
-    compile project(':reclaim-annotations')
-    compile deps.recyclerView
-    compile deps.supportAnnotations
-    testCompile 'junit:junit:4.12'
+    compileOnly project(':reclaim-annotations')
+    annotationProcessor project(':reclaim-compiler')
+
+    implementation deps.recyclerview
+    api deps.supportannotations
+
+    testImplementation 'junit:junit:4.12'
 }
 
 apply from: rootProject.file('gradle-mvn-push.gradle')

@@ -2,11 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     compileOptions {
-        sourceCompatibility = rootProject.ext.sourceCompatibilityVersion
-        targetCompatibility = rootProject.ext.targetCompatibilityVersion
+        sourceCompatibility = rootProject.ext.sourceCompatibility
+        targetCompatibility = rootProject.ext.targetCompatibility
     }
 
     defaultConfig {
@@ -16,7 +15,7 @@ android {
         versionCode 1
         versionName VERSION_NAME
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     lintOptions {
@@ -38,10 +37,15 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    implementation deps.appcompat
+    implementation deps.recyclerview
+    implementation deps.design
+    implementation deps.coordinatorlayout
 
-    compile project(':reclaim-android')
+    implementation project(':reclaim-android')
     annotationProcessor project(':reclaim-compiler')
 
-    testCompile deps.junit
+    compileOnly project(path: ':reclaim-annotations')
+
+    testImplementation deps.junit
 }
