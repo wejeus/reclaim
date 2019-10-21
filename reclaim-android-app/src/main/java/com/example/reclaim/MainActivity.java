@@ -53,6 +53,24 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+        adapter.add(new KeyValueAdapterDelegate.KeyValueCell("Key0", "Value0"));
+
+
 
     }
 }
